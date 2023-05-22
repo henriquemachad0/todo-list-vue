@@ -19,6 +19,10 @@ const todosApp = {
                 alert('O texto da tarefa é obrigatório')
             }
         }
+    },
+
+    created() {
+        this.todos = localStorage.getItem("todos") ?  JSON.parse(localStorage.getItem("todos")) : this.todos
     }
 }
 
