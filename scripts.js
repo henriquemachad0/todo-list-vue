@@ -20,10 +20,14 @@ const todosApp = {
     },
     methods: {
         addTodo: function(){
-            this.todos.push(this.newTodo)
-            this.newTodo = {
-                done: false
-            }           
+            if(this.newTodo.text){
+                this.todos.push(this.newTodo)
+                this.newTodo = {
+                    done: false
+                }    
+            } else {
+                alert('O texto da tarefa é obrigatório')
+            }
         }
     }
 }
